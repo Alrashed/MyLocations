@@ -27,6 +27,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         super.viewDidLoad()
         
         updateLabels()
+        configureGetButton()
     }
     
     func updateLabels() {
@@ -86,6 +87,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         }
     }
     
+    func configureGetButton() {
+        if updatingLocation {
+            getbutton.setTitle("Stop", for: .normal)
+        } else {
+            getbutton.setTitle("Get My Location", for: .normal)
+        }
+    }
+    
     @IBAction func getLocation() {
         let authStatus = CLLocationManager.authorizationStatus()
         
@@ -99,8 +108,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             return
         }
         
-        startLocationManager()
+        if updatingLocation {
+            stopLocationManager()
+        } else {
+            location = nil
+            lastLocationError = nil
+            startLocationManager()
+        }
         updateLabels()
+        configureGetButton()
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -115,6 +131,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         
         stopLocationManager()
         updateLabels()
+        configureGetButton()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -123,6 +140,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         
         location = newLocation
         updateLabels()
+        configureGetButton()
     }
 }
 
