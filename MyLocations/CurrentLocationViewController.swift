@@ -18,10 +18,29 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var getbutton: UIButton!
     
     let locationManager = CLLocationManager()
+    
+    var location: CLLocation?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        if let location = location {
+            latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
+            longitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
+            addressLabel.text = ""
+            messageLabel.text = ""
+            tagButton.isHidden = false
+        } else {
+            latitudeLabel.text = ""
+            longitudeLabel.text = ""
+            addressLabel.text = ""
+            messageLabel.text = "Tap 'Get My Location' to Start"
+            tagButton.isHidden = true
+        }
     }
     
     func showCoreLocationServicesAlert() {
@@ -59,6 +78,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
         print("didUpdateLocations \(newLocation)")
+        
+        location = newLocation
+        updateLabels()
     }
 }
 
