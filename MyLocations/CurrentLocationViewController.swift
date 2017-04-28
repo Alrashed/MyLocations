@@ -18,10 +18,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var getbutton: UIButton!
     
     let locationManager = CLLocationManager()
-    
     var location: CLLocation?
     var updatingLocation = false
     var lastLocationError: Error?
+    
+    let geocoder = CLGeocoder()
+    var placemark: CLPlacemark?
+    var performingReverseGeocoding = false
+    var lastGeocodingError: Error?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,6 +159,16 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 print("*** We're done!")
                 stopLocationManager()
                 configureGetButton()
+            }
+            
+            if !performingReverseGeocoding {
+                print("*** Going to geocode")
+                
+                performingReverseGeocoding = true
+                
+                geocoder.reverseGeocodeLocation(newLocation, completionHandler: { placemarks, error in
+                    print("*** Found placemarks: \(String(describing: placemarks)), error: \(String(describing: error))")
+                })
             }
         }
     }
