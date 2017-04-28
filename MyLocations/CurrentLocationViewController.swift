@@ -138,9 +138,25 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         let newLocation = locations.last!
         print("didUpdateLocations \(newLocation)")
         
-        location = newLocation
-        updateLabels()
-        configureGetButton()
+        if newLocation.timestamp.timeIntervalSinceNow < -5 {
+            return
+        }
+        
+        if newLocation.horizontalAccuracy < 0 {
+            return
+        }
+        
+        if location == nil || location!.horizontalAccuracy > newLocation.horizontalAccuracy {
+            lastLocationError = nil
+            location = newLocation
+            updateLabels()
+            
+            if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+                print("*** We're done!")
+                stopLocationManager()
+                configureGetButton()
+            }
+        }
     }
 }
 
