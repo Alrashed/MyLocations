@@ -38,9 +38,18 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         if let location = location {
             latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
             longitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
-            addressLabel.text = ""
             messageLabel.text = ""
             tagButton.isHidden = false
+            
+            if let placemark = placemark {
+                addressLabel.text = string(from: placemark)
+            } else if performingReverseGeocoding {
+                addressLabel.text = "Searching for Address..."
+            } else if lastGeocodingError != nil {
+                addressLabel.text = "Error Finding Address"
+            } else {
+                addressLabel.text = "No Address Found"
+            }
         } else {
             latitudeLabel.text = ""
             longitudeLabel.text = ""
@@ -64,6 +73,29 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             
             messageLabel.text = statusMessage
         }
+    }
+    
+    func string(from placemark: CLPlacemark) -> String {
+        var line1 = ""
+        if let s = placemark.subThoroughfare {
+            line1 += s + " "
+        }
+        if let s = placemark.thoroughfare {
+            line1 += s
+        }
+        
+        var line2 = ""
+        if let s = placemark.locality {
+            line2 += s + " "
+        }
+        if let s = placemark.administrativeArea {
+            line2 += s + " "
+        }
+        if let s = placemark.postalCode {
+            line2 += s
+        }
+        
+        return line1 + "\n" + line2
     }
     
     func showCoreLocationServicesAlert() {
@@ -168,6 +200,16 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 
                 geocoder.reverseGeocodeLocation(newLocation, completionHandler: { placemarks, error in
                     print("*** Found placemarks: \(String(describing: placemarks)), error: \(String(describing: error))")
+                    
+                    self.lastGeocodingError = error
+                    if error == nil, let p = placemarks, !p.isEmpty {
+                        self.placemark = p.last
+                    } else {
+                        self.placemark = nil
+                    }
+                    
+                    self.performingReverseGeocoding = false
+                    self.updateLabels()
                 })
             }
         }
