@@ -76,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Tag Location"/>
                                 <connections>
-                                    <segue destination="Jbz-4p-V1n" kind="presentation" id="9Mq-am-JzJ"/>
+                                    <segue destination="Jbz-4p-V1n" kind="presentation" identifier="TagLocation" id="9Mq-am-JzJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -128,18 +128,18 @@
                                         <rect key="frame" x="0.0" y="144" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JfN-Qr-iaZ" id="2yB-Bq-Bd9">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJt-pF-YUP">
-                                                    <rect key="frame" x="15" y="12" width="71" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="70.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eP8-w1-WbP">
-                                                    <rect key="frame" x="241" y="12" width="44" height="21"/>
+                                                    <rect key="frame" x="241" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -296,12 +296,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addressLabel" destination="3ed-Iz-bGu" id="ypG-Ov-dbz"/>
-                        <outlet property="categoryLabel" destination="pJt-pF-YUP" id="OkG-KC-qxi"/>
-                        <outlet property="dateLabel" destination="X3u-Wn-i4n" id="KSd-PT-lrp"/>
-                        <outlet property="latitudeLabel" destination="pYP-p8-Jmh" id="aOw-d6-XVS"/>
-                        <outlet property="longitudeLabel" destination="oCS-9f-hqZ" id="GBH-9b-HkG"/>
-                        <outlet property="textView" destination="dGW-Pr-zsW" id="Ibo-I0-Jhl"/>
+                        <outlet property="addressLabel" destination="mg2-1C-vvZ" id="q5K-P0-V9f"/>
+                        <outlet property="categoryLabel" destination="eP8-w1-WbP" id="cAY-R7-g2y"/>
+                        <outlet property="dateLabel" destination="KvS-r1-P1p" id="Du5-dk-V6s"/>
+                        <outlet property="descriptionTextView" destination="dGW-Pr-zsW" id="kxZ-OT-531"/>
+                        <outlet property="latitudeLabel" destination="obv-cN-uvN" id="bRe-q0-HRy"/>
+                        <outlet property="longitudeLabel" destination="1dK-9A-JCo" id="aMd-0a-FYb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GM9-RV-T08" userLabel="First Responder" sceneMemberID="firstResponder"/>

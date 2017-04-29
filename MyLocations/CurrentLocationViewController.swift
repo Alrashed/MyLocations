@@ -36,6 +36,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         configureGetButton()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TagLocation" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
+            
+            controller.coordinate = location!.coordinate
+        }
+    }
+    
     func updateLabels() {
         if let location = location {
             latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
