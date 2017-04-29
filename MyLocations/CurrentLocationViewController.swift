@@ -182,6 +182,11 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             return
         }
         
+        var distance = CLLocationDistance(Double.greatestFiniteMagnitude)
+        if let location = location {
+            distance = newLocation.distance(from: location)
+        }
+        
         if location == nil || location!.horizontalAccuracy > newLocation.horizontalAccuracy {
             lastLocationError = nil
             location = newLocation
@@ -191,6 +196,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 print("*** We're done!")
                 stopLocationManager()
                 configureGetButton()
+                
+                if distance > 0 {
+                    performingReverseGeocoding = false
+                }
             }
             
             if !performingReverseGeocoding {
@@ -211,6 +220,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                     self.performingReverseGeocoding = false
                     self.updateLabels()
                 })
+            }
+        } else if distance < 1 {
+            let timeInterval = newLocation.timestamp.timeIntervalSince(location!.timestamp)
+            
+            if timeInterval > 10 {
+                print("*** Force done!")
+                stopLocationManager()
+                updateLabels()
+                configureGetButton()
             }
         }
     }
