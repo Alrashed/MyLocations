@@ -9,6 +9,13 @@
 import UIKit
 import CoreLocation
 
+private let dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .short
+    return formatter
+}()
+
 class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var categoryLabel: UILabel!
@@ -34,6 +41,8 @@ class LocationDetailsViewController: UITableViewController {
         } else {
             addressLabel.text = "No Address Found"
         }
+        
+        dateLabel.text = format(date: Date())
     }
     
     func string(from placemark: CLPlacemark) -> String {
@@ -58,6 +67,10 @@ class LocationDetailsViewController: UITableViewController {
             text += s
         }
         return text
+    }
+    
+    func format(date: Date) -> String {
+        return dateFormatter.string(for: date)!
     }
     
     @IBAction func done() {
