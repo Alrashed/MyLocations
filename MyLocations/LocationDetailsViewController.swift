@@ -45,6 +45,10 @@ class LocationDetailsViewController: UITableViewController {
         }
         
         dateLabel.text = format(date: Date())
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        gestureRecognizer.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(gestureRecognizer)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,11 +92,22 @@ class LocationDetailsViewController: UITableViewController {
         return dateFormatter.string(for: date)!
     }
     
-    @IBAction func done() {
-        dismiss(animated: true, completion: nil)
+    func hideKeyboard(_ gestureRecognizer: UITapGestureRecognizer) {
+        let point = gestureRecognizer.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        if indexPath != nil && indexPath!.section == 0 && indexPath!.row == 0 {
+            return
+        }
+        
+        descriptionTextView.resignFirstResponder()
     }
     
     @IBAction func cancel() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func done() {
         dismiss(animated: true, completion: nil)
     }
     
