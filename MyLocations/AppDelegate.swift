@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             currentLocationViewController.managedObjectContext = managedObjectContext
         }
+        print(applicationDocumentsDirectory)
         return true
     }
 
