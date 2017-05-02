@@ -27,7 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var managedObjectContext: NSManagedObjectContext = self.persistantContainer.viewContext
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let tabBarController = window!.rootViewController as! UITabBarController
+        
+        if let tabBarControllers = tabBarController.viewControllers {
+            let currentLocationViewController = tabBarControllers[0] as! CurrentLocationViewController
+            
+            currentLocationViewController.managedObjectContext = managedObjectContext
+        }
         return true
     }
 
