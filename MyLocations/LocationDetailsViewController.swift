@@ -54,6 +54,12 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
+    @IBAction func categoryPickerDidPickCategory(_ segue: UIStoryboardSegue) {
+        let controller = segue.source as! CategoryPickerViewController
+        categoryName = controller.selectedCategoryName
+        categoryLabel.text = categoryName
+    }
+    
     func string(from placemark: CLPlacemark) -> String {
         var text = ""
         
