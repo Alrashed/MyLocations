@@ -16,6 +16,9 @@
 		E9F224961EB2C682003146FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F224941EB2C682003146FB /* Main.storyboard */; };
 		E9F224981EB2C682003146FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F224971EB2C682003146FB /* Assets.xcassets */; };
 		E9F2249B1EB2C682003146FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F224991EB2C682003146FB /* LaunchScreen.storyboard */; };
+		E9F5C24F1EB930C600930221 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C24D1EB930C600930221 /* DataModel.xcdatamodeld */; };
+		E9F5C2561EB931C500930221 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C2541EB931C500930221 /* Location+CoreDataClass.swift */; };
+		E9F5C2571EB931C500930221 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C2551EB931C500930221 /* Location+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E9F224971EB2C682003146FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9F2249A1EB2C682003146FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9F2249C1EB2C682003146FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9F5C24E1EB930C600930221 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		E9F5C2541EB931C500930221 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E9F5C2551EB931C500930221 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,9 @@
 				E9F224921EB2C682003146FB /* LocationDetailsViewController.swift */,
 				E9D8BC591EB7E21100F10793 /* CategoryPickerViewController.swift */,
 				E9D8BC5B1EB8148700F10793 /* HudView.swift */,
+				E9F5C2541EB931C500930221 /* Location+CoreDataClass.swift */,
+				E9F5C2551EB931C500930221 /* Location+CoreDataProperties.swift */,
+				E9F5C24D1EB930C600930221 /* DataModel.xcdatamodeld */,
 				E9F224941EB2C682003146FB /* Main.storyboard */,
 				E9F224971EB2C682003146FB /* Assets.xcassets */,
 				E9F224991EB2C682003146FB /* LaunchScreen.storyboard */,
@@ -152,6 +161,9 @@
 				E9D8BC5A1EB7E21100F10793 /* CategoryPickerViewController.swift in Sources */,
 				E9D8BC5C1EB8148700F10793 /* HudView.swift in Sources */,
 				E9F224931EB2C682003146FB /* LocationDetailsViewController.swift in Sources */,
+				E9F5C24F1EB930C600930221 /* DataModel.xcdatamodeld in Sources */,
+				E9F5C2561EB931C500930221 /* Location+CoreDataClass.swift in Sources */,
+				E9F5C2571EB931C500930221 /* Location+CoreDataProperties.swift in Sources */,
 				E9F2248F1EB2C682003146FB /* AppDelegate.swift in Sources */,
 				E9F224911EB2C682003146FB /* CurrentLocationViewController.swift in Sources */,
 				E9D8BC5E1EB8459A00F10793 /* Functions.swift in Sources */,
@@ -321,6 +333,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9F5C24D1EB930C600930221 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9F5C24E1EB930C600930221 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = E9F5C24E1EB930C600930221 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E9F224831EB2C682003146FB /* Project object */;
 }
