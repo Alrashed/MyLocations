@@ -17,3 +17,10 @@ let applicationDocumentsDirectory: URL = {
 func afterDelay(_ seconds: Double, closure: @escaping () -> ()) {
     DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: closure)
 }
+
+let MyManagedObjectContextSaveDidFailNotification = Notification.Name(rawValue: "MyManagedObjectContextSaveDidFailNotification")
+
+func fatalCoreDataError(_ error: Error) {
+    print("*** Fatal error: \(error)")
+    NotificationCenter.default.post(name: MyManagedObjectContextSaveDidFailNotification, object: nil)
+}
