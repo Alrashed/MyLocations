@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9AFE1D61EBA9855004B0A35 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AFE1D51EBA9855004B0A35 /* MapKit.framework */; };
 		E9D8BC5A1EB7E21100F10793 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8BC591EB7E21100F10793 /* CategoryPickerViewController.swift */; };
 		E9D8BC5C1EB8148700F10793 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8BC5B1EB8148700F10793 /* HudView.swift */; };
 		E9D8BC5E1EB8459A00F10793 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8BC5D1EB8459A00F10793 /* Functions.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9AFE1D51EBA9855004B0A35 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E9D8BC591EB7E21100F10793 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 		E9D8BC5B1EB8148700F10793 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		E9D8BC5D1EB8459A00F10793 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -47,17 +49,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AFE1D61EBA9855004B0A35 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9AFE1D41EBA9855004B0A35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9AFE1D51EBA9855004B0A35 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E9F224821EB2C682003146FB = {
 			isa = PBXGroup;
 			children = (
 				E9F2248D1EB2C682003146FB /* MyLocations */,
 				E9F2248C1EB2C682003146FB /* Products */,
+				E9AFE1D41EBA9855004B0A35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +137,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MD894V3P79;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
