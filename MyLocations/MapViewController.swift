@@ -25,6 +25,23 @@ class MapViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditLocation" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! LocationDetailsViewController
+            
+            controller.managedObjectContext = managedObjectContext
+            
+            let button = sender as! UIButton
+            let location = locations[button.tag]
+            controller.locationToEdit = location
+        }
+    }
+    
+    func showLocationDetails(sender: UIButton) {
+        performSegue(withIdentifier: "EditLocation", sender: sender)
+    }
+    
     func updateLocations() {
         mapView.removeAnnotations(locations)
         
@@ -70,10 +87,6 @@ class MapViewController: UIViewController {
         }
         
         return mapView.regionThatFits(region)
-    }
-    
-    func showLocationDetails(_ sender: UIButton) {
-        
     }
     
     @IBAction func showUser() {
