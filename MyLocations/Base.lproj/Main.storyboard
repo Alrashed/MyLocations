@@ -455,11 +455,14 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outlet property="delegate" destination="l0R-bM-xKM" id="96e-1z-dIp"/>
+                                </connections>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="1mg-ZH-kTa"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="first" id="1mg-ZH-kTa"/>
                     <connections>
                         <outlet property="mapView" destination="Atk-MC-cPF" id="6bp-lh-Dfx"/>
                         <segue destination="Jbz-4p-V1n" kind="presentation" identifier="EditLocation" id="E84-LN-QrC"/>

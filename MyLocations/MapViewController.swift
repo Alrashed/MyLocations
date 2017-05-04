@@ -147,3 +147,11 @@ extension MapViewController: MKMapViewDelegate {
         return annotationView
     }
 }
+
+// MARK: - UINavigationBarDelegate
+
+extension MapViewController: UINavigationBarDelegate {
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
+    }
+}
