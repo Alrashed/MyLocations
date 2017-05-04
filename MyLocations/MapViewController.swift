@@ -16,7 +16,8 @@ class MapViewController: UIViewController {
     var managedObjectContext: NSManagedObjectContext!
     
     @IBAction func showUser() {
-        
+        let region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 1000, 1000)
+        mapView.setRegion(region, animated: true)
     }
     
     @IBAction func getLocations() {
