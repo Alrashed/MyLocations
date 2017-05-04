@@ -445,7 +445,7 @@
                                     <navigationItem title="Map" id="KoZ-gR-Ukg">
                                         <barButtonItem key="leftBarButtonItem" title="Locations" id="vO5-iA-DeE">
                                             <connections>
-                                                <action selector="getLocations" destination="l0R-bM-xKM" id="cZW-0S-bog"/>
+                                                <action selector="showLocations" destination="l0R-bM-xKM" id="Q6m-B7-eKk"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="User" id="5rm-Mi-1VG">
