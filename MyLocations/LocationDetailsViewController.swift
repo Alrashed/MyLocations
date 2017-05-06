@@ -47,6 +47,17 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
+    var image: UIImage? {
+        didSet {
+            if let image = image {
+                imageView.image = image
+                imageView.isHidden = false
+                imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
+                addPhotoLabel.isHidden = true
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -238,6 +249,8 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
         dismiss(animated: true, completion: nil)
     }
     
