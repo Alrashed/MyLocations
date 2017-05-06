@@ -70,8 +70,13 @@ class LocationDetailsViewController: UITableViewController {
         
         listenForBackgroundNotification()
         
-        if locationToEdit != nil {
+        if let location = locationToEdit {
             title = "Edit Location"
+            if location.hasPhoto {
+                if let theImage = location.photoImage {
+                    image = theImage
+                }
+            }
         }
         
         descriptionTextView.text = descriptionText
