@@ -189,6 +189,7 @@ class LocationDetailsViewController: UITableViewController {
         }
         
         if indexPath.section == 1 && indexPath.row == 0 {
+            tableView.deselectRow(at: indexPath, animated: true)
             pickPhoto()
         }
     }
