@@ -58,8 +58,17 @@ class LocationDetailsViewController: UITableViewController {
         }
     }
     
+    var observer: Any!
+    
+    deinit {
+        print("*** deinit \(self)")
+        NotificationCenter.default.removeObserver(observer)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listenForBackgroundNotification()
         
         if locationToEdit != nil {
             title = "Edit Location"
@@ -95,6 +104,17 @@ class LocationDetailsViewController: UITableViewController {
         let controller = segue.source as! CategoryPickerViewController
         categoryName = controller.selectedCategoryName
         categoryLabel.text = categoryName
+    }
+    
+    func listenForBackgroundNotification() {
+        observer = NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationDidEnterBackground, object: nil, queue: OperationQueue.main, using: { [weak self] _ in
+            if let strongSelf = self {
+                if strongSelf.presentedViewController != nil {
+                    strongSelf.dismiss(animated: false, completion: nil)
+                }
+                strongSelf.descriptionTextView.resignFirstResponder()
+            }
+        })
     }
     
     func string(from placemark: CLPlacemark) -> String {
