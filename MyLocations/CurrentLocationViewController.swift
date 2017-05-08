@@ -12,7 +12,9 @@ import CoreData
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var latitudeTextLabel: UILabel!
     @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeTextLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var tagButton: UIButton!
@@ -54,6 +56,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             latitudeLabel.text = String(format: "%.8f", location.coordinate.latitude)
             longitudeLabel.text = String(format: "%.8f", location.coordinate.longitude)
             messageLabel.text = ""
+            latitudeTextLabel.isHidden = false
+            longitudeTextLabel.isHidden = false
             tagButton.isHidden = false
             
             if let placemark = placemark {
@@ -69,6 +73,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             latitudeLabel.text = ""
             longitudeLabel.text = ""
             addressLabel.text = ""
+            latitudeTextLabel.isHidden = true
+            longitudeTextLabel.isHidden = true
             tagButton.isHidden = true
             
             let statusMessage: String
