@@ -24,6 +24,10 @@ class LocationCell: UITableViewCell {
         let selectionView = UIView(frame: CGRect.zero)
         selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         selectedBackgroundView = selectionView
+        
+        photoImageView.layer.cornerRadius = photoImageView.bounds.size.width / 2
+        photoImageView.clipsToBounds = true
+        separatorInset = UIEdgeInsets(top: 0, left: 82, bottom: 0, right: 0)
     }
     
     func configure(for location: Location) {
@@ -44,14 +48,13 @@ class LocationCell: UITableViewCell {
         }
         
         photoImageView.image = thumbnail(for: location)
-        photoImageView.clipsToBounds = true
     }
     
     func thumbnail(for location: Location) -> UIImage {
         if location.hasPhoto, let image = location.photoImage {
             return image.resizeImage(withBounds: CGSize(width: 52, height: 52))
         } else {
-            return UIImage()
+            return UIImage(named: "No Photo")!
         }
     }
 }
