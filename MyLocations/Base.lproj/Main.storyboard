@@ -365,7 +365,7 @@
         <!--Tag-->
         <scene sceneID="eMd-J4-Reu">
             <objects>
-                <navigationController id="Jbz-4p-V1n" sceneMemberID="viewController">
+                <navigationController id="Jbz-4p-V1n" customClass="MyNavigationController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tag" id="lPS-Tl-7Ko"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SAN-oj-jfB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -490,7 +490,7 @@
         <!--Locations-->
         <scene sceneID="ej4-uU-wsR">
             <objects>
-                <navigationController id="9g7-zY-9a6" sceneMemberID="viewController">
+                <navigationController id="9g7-zY-9a6" customClass="MyNavigationController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="PLh-Ct-cJA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vdR-f9-9cX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -504,10 +504,10 @@
             </objects>
             <point key="canvasLocation" x="797" y="0.0"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MyTabBarController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
