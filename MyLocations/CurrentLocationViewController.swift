@@ -19,6 +19,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var tagButton: UIButton!
     @IBOutlet weak var getbutton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     let locationManager = CLLocationManager()
     var location: CLLocation?
