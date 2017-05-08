@@ -37,6 +37,10 @@ class LocationsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.backgroundColor = UIColor.black
+        tableView.separatorColor = UIColor(white: 1.0, alpha: 0.2)
+        tableView.indicatorStyle = .white
+        
         navigationItem.rightBarButtonItem = editButtonItem
         
         performFetch()
