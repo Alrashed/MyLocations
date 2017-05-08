@@ -458,12 +458,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Map" id="KoZ-gR-Ukg">
-                                        <barButtonItem key="leftBarButtonItem" title="Locations" id="vO5-iA-DeE">
+                                        <barButtonItem key="leftBarButtonItem" image="Pin" id="vO5-iA-DeE">
                                             <connections>
                                                 <action selector="showLocations" destination="l0R-bM-xKM" id="Q6m-B7-eKk"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="User" id="5rm-Mi-1VG">
+                                        <barButtonItem key="rightBarButtonItem" image="User" id="5rm-Mi-1VG">
                                             <connections>
                                                 <action selector="showUser" destination="l0R-bM-xKM" id="AhM-6Y-OjA"/>
                                             </connections>
@@ -528,7 +528,9 @@
     <resources>
         <image name="Locations" width="30" height="30"/>
         <image name="Map" width="30" height="30"/>
+        <image name="Pin" width="24" height="24"/>
         <image name="Tag" width="30" height="30"/>
+        <image name="User" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="E84-LN-QrC"/>
