@@ -123,27 +123,14 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     func string(from placemark: CLPlacemark) -> String {
-        var text = ""
-        
-        if let s = placemark.subThoroughfare {
-            text += s + " "
-        }
-        if let s = placemark.thoroughfare {
-            text += s + ", "
-        }
-        if let s = placemark.locality {
-            text += s + ", "
-        }
-        if let s = placemark.administrativeArea {
-            text += s + " "
-        }
-        if let s = placemark.postalCode {
-            text += s + ", "
-        }
-        if let s = placemark.country {
-            text += s
-        }
-        return text
+        var line = ""
+        line.add(text: placemark.subThoroughfare)
+        line.add(text: placemark.thoroughfare, seperatedBy: " ")
+        line.add(text: placemark.locality, seperatedBy: ", ")
+        line.add(text: placemark.administrativeArea, seperatedBy: " ")
+        line.add(text: placemark.postalCode, seperatedBy: ", ")
+        line.add(text: placemark.country, seperatedBy: ", ")
+        return line
     }
     
     func format(date: Date) -> String {

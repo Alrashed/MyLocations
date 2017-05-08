@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E96706EC1EBFC14B008BD1B4 /* String+AddText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96706EB1EBFC14B008BD1B4 /* String+AddText.swift */; };
 		E9AFE1D61EBA9855004B0A35 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AFE1D51EBA9855004B0A35 /* MapKit.framework */; };
 		E9AFE1D81EBA991E004B0A35 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AFE1D71EBA991E004B0A35 /* MapViewController.swift */; };
 		E9D8BC5A1EB7E21100F10793 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D8BC591EB7E21100F10793 /* CategoryPickerViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E96706EB1EBFC14B008BD1B4 /* String+AddText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AddText.swift"; sourceTree = "<group>"; };
 		E9AFE1D51EBA9855004B0A35 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E9AFE1D71EBA991E004B0A35 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E9D8BC591EB7E21100F10793 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				E9F5C2581EB96FE900930221 /* LocationsViewController.swift */,
 				E9F5C25A1EB9879700930221 /* LocationCell.swift */,
 				E9AFE1D71EBA991E004B0A35 /* MapViewController.swift */,
+				E96706EB1EBFC14B008BD1B4 /* String+AddText.swift */,
 				E9DB79C61EBD936F004ACA45 /* UIImage+Resize.swift */,
 				E9F5C2541EB931C500930221 /* Location+CoreDataClass.swift */,
 				E9F5C2551EB931C500930221 /* Location+CoreDataProperties.swift */,
@@ -196,6 +199,7 @@
 				E9F5C2561EB931C500930221 /* Location+CoreDataClass.swift in Sources */,
 				E9F5C25B1EB9879700930221 /* LocationCell.swift in Sources */,
 				E9AFE1D81EBA991E004B0A35 /* MapViewController.swift in Sources */,
+				E96706EC1EBFC14B008BD1B4 /* String+AddText.swift in Sources */,
 				E9F5C2571EB931C500930221 /* Location+CoreDataProperties.swift in Sources */,
 				E9F2248F1EB2C682003146FB /* AppDelegate.swift in Sources */,
 				E9F224911EB2C682003146FB /* CurrentLocationViewController.swift in Sources */,
