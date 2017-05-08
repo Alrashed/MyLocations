@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import CoreData
 import QuartzCore
+import AudioToolbox
 
 class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate, CAAnimationDelegate {
     @IBOutlet weak var messageLabel: UILabel!
@@ -46,12 +47,16 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         button.center.y = 220
         return button
     }()
+    
+    var soundID: SystemSoundID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateLabels()
         configureGetButton()
+        
+        loadSoundEffect("Sound.caf")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -277,6 +282,12 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                     
                     self.lastGeocodingError = error
                     if error == nil, let p = placemarks, !p.isEmpty {
+                        
+                        if self.placemark == nil {
+                            print("FIRST TIME!")
+                            self.playSoundEffect()
+                        }
+                        
                         self.placemark = p.last
                     } else {
                         self.placemark = nil
@@ -356,6 +367,28 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         
         logoButton.layer.removeAllAnimations()
         logoButton.removeFromSuperview()
+    }
+    
+    // MARK: - Sound Effect
+    
+    func loadSoundEffect(_ name: String) {
+        if let path = Bundle.main.path(forResource: name, ofType: nil) {
+            let fileURL = URL(fileURLWithPath: path, isDirectory: false)
+            let error = AudioServicesCreateSystemSoundID(fileURL as CFURL, &soundID)
+            
+            if error != kAudioServicesNoError {
+                print("Error code \(error) loading sound at path: \(path)")
+            }
+        }
+    }
+    
+    func unloadSoundEffect() {
+        AudioServicesDisposeSystemSoundID(soundID)
+        soundID = 0
+    }
+    
+    func playSoundEffect() {
+        AudioServicesPlaySystemSound(soundID)
     }
 }
 
