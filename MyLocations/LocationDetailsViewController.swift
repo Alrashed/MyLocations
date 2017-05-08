@@ -127,8 +127,8 @@ class LocationDetailsViewController: UITableViewController {
         line.add(text: placemark.subThoroughfare)
         line.add(text: placemark.thoroughfare, seperatedBy: " ")
         line.add(text: placemark.locality, seperatedBy: ", ")
-        line.add(text: placemark.administrativeArea, seperatedBy: " ")
-        line.add(text: placemark.postalCode, seperatedBy: ", ")
+        line.add(text: placemark.administrativeArea, seperatedBy: ", ")
+        line.add(text: placemark.postalCode, seperatedBy: " ")
         line.add(text: placemark.country, seperatedBy: ", ")
         return line
     }
