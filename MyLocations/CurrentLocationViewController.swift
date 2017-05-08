@@ -33,6 +33,18 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var timer: Timer?
     
     var managedObjectContext: NSManagedObjectContext!
+    
+    var logoVisible = false
+    
+    lazy var logoButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(UIImage(named: "Logo"), for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(getLocation), for: .touchUpInside)
+        button.center.x = self.view.bounds.midX
+        button.center.y = 220
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +102,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             } else if updatingLocation {
                 statusMessage = "Searching..."
             } else {
-                statusMessage = "Tap 'Get My Location' to Start"
+                statusMessage = ""
+                showLogoView()
             }
             
             messageLabel.text = statusMessage
@@ -174,6 +187,10 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         if authStatus == .denied || authStatus == .restricted {
             showCoreLocationServicesAlert()
             return
+        }
+        
+        if logoVisible {
+            hideLogoView()
         }
         
         if updatingLocation {
@@ -263,6 +280,22 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                 configureGetButton()
             }
         }
+    }
+    
+    // MARK: - Logo View
+    
+    func showLogoView() {
+        if !logoVisible {
+            logoVisible = true
+            containerView.isHidden = true
+            view.addSubview(logoButton)
+        }
+    }
+    
+    func hideLogoView() {
+        logoVisible = false
+        containerView.isHidden = false
+        logoButton.removeFromSuperview()
     }
 }
 
