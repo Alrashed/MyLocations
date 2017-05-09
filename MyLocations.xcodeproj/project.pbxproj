@@ -23,7 +23,6 @@
 		E9F224931EB2C682003146FB /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F224921EB2C682003146FB /* LocationDetailsViewController.swift */; };
 		E9F224961EB2C682003146FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F224941EB2C682003146FB /* Main.storyboard */; };
 		E9F224981EB2C682003146FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F224971EB2C682003146FB /* Assets.xcassets */; };
-		E9F2249B1EB2C682003146FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9F224991EB2C682003146FB /* LaunchScreen.storyboard */; };
 		E9F5C24F1EB930C600930221 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C24D1EB930C600930221 /* DataModel.xcdatamodeld */; };
 		E9F5C2561EB931C500930221 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C2541EB931C500930221 /* Location+CoreDataClass.swift */; };
 		E9F5C2571EB931C500930221 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F5C2551EB931C500930221 /* Location+CoreDataProperties.swift */; };
@@ -49,7 +48,6 @@
 		E9F224921EB2C682003146FB /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		E9F224951EB2C682003146FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9F224971EB2C682003146FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E9F2249A1EB2C682003146FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9F2249C1EB2C682003146FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9F5C24E1EB930C600930221 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		E9F5C2541EB931C500930221 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				E9F224941EB2C682003146FB /* Main.storyboard */,
 				E9F224971EB2C682003146FB /* Assets.xcassets */,
 				E927C4491EC12F14004E0C3C /* Sound.caf */,
-				E9F224991EB2C682003146FB /* LaunchScreen.storyboard */,
 				E9F2249C1EB2C682003146FB /* Info.plist */,
 			);
 			path = MyLocations;
@@ -189,7 +186,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9F2249B1EB2C682003146FB /* LaunchScreen.storyboard in Resources */,
 				E9F224981EB2C682003146FB /* Assets.xcassets in Resources */,
 				E927C44A1EC12F14004E0C3C /* Sound.caf in Resources */,
 				E9F224961EB2C682003146FB /* Main.storyboard in Resources */,
@@ -232,14 +228,6 @@
 				E9F224951EB2C682003146FB /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E9F224991EB2C682003146FB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9F2249A1EB2C682003146FB /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -342,6 +330,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = MD894V3P79;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -355,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = MD894V3P79;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
